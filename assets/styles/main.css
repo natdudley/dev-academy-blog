@@ -66,6 +66,7 @@ body {
 }
 .header-title {
     margin-left: 20px;
+    font-size: 1.5em;
     font-family: 'clear_sansregular', Helvetica, sans-serif;
     animation-name: header;
     animation-duration: 100s;
@@ -95,6 +96,10 @@ time {
     color: white;
     font-family: 'clear_sansregular', Helvetica, sans-serif;
 }
-a {
+.blog-link {
     color: white;
+}
+
+.home-link {
+    text-decoration: none;
 }
