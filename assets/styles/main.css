@@ -2,6 +2,12 @@ body {
     animation-name: bg;
     animation-duration: 100s;
     animation-iteration-count: infinite;
+    font-size: 18px;
+    font-family: 'clear_sansregular', Helvetica, sans-serif;
+    color: white;
+}
+a, a:visited, a:hover {
+  color: white;
 }
 @keyframes bg {
     0% {
@@ -99,7 +105,6 @@ body {
 .header-title {
     margin-left: 20px;
     font-size: 1.5em;
-    font-family: 'clear_sansregular', Helvetica, sans-serif;
     animation-name: header;
     animation-duration: 100s;
     animation-iteration-count: infinite;
@@ -133,15 +138,17 @@ body {
         color: hsl(29, 99%, 88%);
       }    
   } 
-.page-title {
-    font-size: 2em;
+.home-title, .blog-title {
     text-transform: uppercase;
-    color: white;
-    font-family: 'clear_sansregular', Helvetica, sans-serif;
+}
+.home-title {
+  font-size: 1em;
+}
+.blog-title {
+  font-size: 1.5em;
 }
 .subtitle {
     font-size: 1em;
-    font-family: 'clear_sansregular', Helvetica, sans-serif;
     animation-name: page-title;
     animation-duration: 100s;
     animation-iteration-count: infinite;
@@ -149,26 +156,10 @@ body {
 .date {
   font-size: 1em;
   text-transform: uppercase;
-  font-family: 'clear_sansregular', Helvetica, sans-serif;
   animation-name: page-title;
   animation-duration: 100s;
   animation-iteration-count: infinite;
 }
-p, time {
-    color: white;
-    font-family: 'clear_sansregular', Helvetica, sans-serif;
-}
-.blog-link {
-    color: white;
-}
 .home-link {
     text-decoration: none;
-}
-.box-click {
-    position:absolute; 
-    width:100%;
-    height:100%;
-    top:0;
-    left: 0;
-    z-index: 1;
 }
