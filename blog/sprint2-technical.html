@@ -18,20 +18,88 @@
         <div class="index-container">
           <section class="blog-container">
             <div class="list-title">
-              <h1 class="blog-title">The Story of Te Houtaewa (PAGE heading)</h1>
-              <h2 class="subtitle">E kore e mau i a koe, he wae kai pakiaka. <em>A foot accustomed to running over roots makes the speediest runner.</em> (Optional SUB title) </h2>
-              <h3 class="date">10 November 2010</h3>
+              <h1 class="blog-title">Sprint 2 Technical Blog</h1>
+              <h2 class="subtitle">The difference between absolute and relative positioning</h2>
+              <h3 class="date">19 November 2010</h3>
             </div>
             <div class="list-content">
               <p>
-                Te Houtaewa was the fastest runner of his day and played many pranks on his peoples enemies. One morning his mother wanted kumara for the hangi (earth oven) and asked Te Houtaewa to go to the gardens at Te Kao, a short distance away. He agreed to fetch the kumara and told his mother to prepare the hangi.
+                <code>Position</code> is part of a suite of tools we use to determine how a page is laid out. Absolute and relative are two types of positioning in CSS that determine whether an element appears in normal document flow and what element it is positioned in relation to. 
               </p>
               <p>
-                Instead of going to the nearby gardens, Te Houtaewa set off for Ahipara as he wanted to annoy some Te Rarawa people who lived there. Carrying two large baskets for the kumara, he ran like the wind, completing the journey over the hard sands of Te Oneroa a Tohe (Ninety Mile Beach) in the few hours it takes a good hangi to heat up properly. On reaching Ahipara, he went straight to the people's kumara pataka (storehouse for the sweet potatoes) situated at the foot of the hill Whangatauatia.
+                In order to understand how position is used, you need to understand the basics on how a web page behaves by default. This is called ‘normal document flow’. If you already know how normal document flow works, you can skip straight to the Layout section.
+              </p>
+              <h2>Normal document flow</h2>
+              <p>
+                When we’re writing a web page, we add a series of elements to a page, like <code>div</code>, <code>p</code>, <code>img</code>. Every element we add to the page is a rectangular block of pixels.
               </p>
               <p>
-                While Te Houtaewa was filling his baskets with kumara he was spotted stealing the kai (food). He was immediately recognised.
+                These elements are added to the page using ‘normal document flow’. There are two ways these blocks can be added:
               </p>
+              <ul>
+                <li>On the same line as the previous element. This is called <code>inline</code>. In-line elements typically add some form of non-text content, like <code>img</code>, <code>svg</code>, and <code>embed</code>, or add semantic meaning to text, like <code>a</code>, <code>time</code>, <code>code</code>, and <code>sup</code>.</li>
+                <li>On a new line. These is called <code>block</code>. Block elements typically add text, like <code>p</code>, <code>h1</code>, <code>li</code>, <code>ul</code>, or document structure, like <code>div</code>, <code>article</code>, <code>section</code>, or <code>footer</code>.</li>
+              </ul>
+              <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="natdudley" data-slug-hash="WNNPeXz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Block vs inline">
+                <span>See the Pen <a href="https://codepen.io/natdudley/pen/WNNPeXz">
+                Block vs inline</a> by nat (<a href="https://codepen.io/natdudley">@natdudley</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+              <p>The direction these are added is determined by the writing mode of the previous element. This defaults to writing horizontally, top to bottom, so unless we change it, inline elements will be added horizontally, and block elements will be added from top to bottom. This is how English and other similar languages work.</p>
+              <p>It can also be changed so the line direction is vertical, and the blocks added either right to left, or left to right for languages like Japanese.</p>
+              <p>For the purposes of this post, I’ll describe layout using the default English mode.</p>
+              <h2>Layout</h2>
+              <p>Normal document flow gives us a default layout of our page, but that’s almost always not how we want our web page to appear. </p>
+              <p>CSS has a range of tools to help us manage the layout and flow of the page. Tools like Flexbox, Grid, and Floats are most commonly used for the heavy lifting of laying out page content. We’re not going to dig into those here, because they’re huge topics on their own! Instead, we’re going to look at another tool, <code>position</code>.</p>
+              <h3>Position</h3>
+              <p>Position determines two things:</p>
+              <ul>
+                <li>Does your element live inside or outside of the page flow?</li>
+                <li>What element in your element positioned in relation to?</li>
+              </ul>
+              <p>Every element on your page will either be positioned or not positioned. By default, every element has the position <code>static</code>. Somewhat confusingly, a position of <code>static</code> means that the element is not positioned. It will appear on the page wherever it is computed to appear in normal flow.</p>
+              <p>Any element you apply a specific position value to other than <code>static</code> is a positioned element. For any positioned element, you can also specify a <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> property which will determine its final computed position.</p>
+              <p>There are a few different types of positioned elements.</p>
+              <h4>Absolutely positioned elements</h4>
+              <p>Absolutely positioned elements are elements which are entirely removed from the normal flow of the page. You can think of them as sitting on another layer, hovering above the page. When you set an absolutely position an element, the elements that come after it in the normal document flow cannot see it any more, and will move their position to fill the gap.</p>
+              <p>There are two different position values which create an absolute positioned element.</p>
+              <h5>Absolute</h5>
+              <p><code>Absolute</code>: An element with an absolute value will determine its position based on its closest positioned containing ancestor block and the offsets you specify. That can be hard to wrap your head around, but it basically means that it figures out where it needs to be by looking at all the previous blocks it is inside, and finding the closest one with a <code>position</code> value that isn’t static. If none of its containing blocks has a position, it will base its position on your <code><html></code> tag.</p>
+              <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="natdudley" data-slug-hash="Rwwvwrj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Absolute position">
+                <span>See the Pen <a href="https://codepen.io/natdudley/pen/Rwwvwrj">
+                Absolute position</a> by nat (<a href="https://codepen.io/natdudley">@natdudley</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <p>Absolute positioning is used for things like setting your navigation bar at the top of the page.</p> 
+              <h5>Fixed</h5>
+              <p><code>Fixed</code>: An element with a fixed position will base its final position on your viewport (which is a fancy name for your browser window), and the offsets you specify. Elements with a fixed position are always visible on the screen. </p>
+              <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="natdudley" data-slug-hash="eYYxYBN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Fixed Position">
+                <span>See the Pen <a href="https://codepen.io/natdudley/pen/eYYxYBN">
+                Fixed Position</a> by nat (<a href="https://codepen.io/natdudley">@natdudley</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              <p>Fixed positioning is commonly used if you want your navigation bar to be visible at all times, even when you scroll, or for things like a hovering button to contact customer support teams.</p>  
+              <h4>Relatively positioned elements</h4>
+              <p>Relatively positioned elements are elements which still exist in the normal flow of the page. Unlike absolutely positioned elements, relatively positioned elements still impact the position of elements that come after them in the normal document flow. Basically, they still take up space in their original position in the page. A relatively positioned element will compute its position based on its original place in the document flow, and the offsets you specify.</p>
+              <p>The <code>relative</code> value is used to relatively position an element. </p>
+              <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="natdudley" data-slug-hash="qBBgBrr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Relative positioning">
+                <span>See the Pen <a href="https://codepen.io/natdudley/pen/qBBgBrr">
+                Relative positioning</a> by nat (<a href="https://codepen.io/natdudley">@natdudley</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <p>You might use <code>relative</code> position to alter how two child elements are lined up in a container.</p>
+              <h4>Sticky positioned elements</h4>
+              <p>Sticky positioned elements are a combination of fixed and relative positioning. Sticky elements exist in their relative position until it meets a certain threshold, at which point it becomes fixed. This is used for things like making your navigation bar stick to the top when you scroll.</p>
+              <h3>Summary</h3>
+              <p>By default, elements have a static position in the normal document flow.</p>
+              <p>You can use the <code>position</code> property to change this. There are 5 possible values for the <code>position</code> property:</p>
+              <ul>
+                <li>Static: The default value which is not positioned and leaves element in normal place in normal flow.</li>
+                <li>Relative: A relatively positioned value which leaves the element in normal flow and positions it relative to it’s normal spot.</li>
+                <li>Absolute: An absolutely positioned value which removes the element from normal flow and positions it relative to it’s closest positioned ancestor container.</li>
+                <li>Fixed: An absolutely positioned value which removes the element from normal flow and positions it relative to the viewport.</li>
+                <li>Sticky: A positioned value which acts as a hybrid of relative and sticky.</li>
+              </ul>
             </div>
           </section>
         </div>
