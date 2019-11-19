@@ -6,14 +6,14 @@ body {
     font-family: 'clear_sansregular', Helvetica, sans-serif;
     color: white;
 }
-a, a:visited, a:hover {
+main a, main a:visited, main a:hover {
   color: white;
 }
 
 h2, h3, h4, h5 {
   margin-top: 2em;
 }
-.index-container {
+main {
     margin-top: 100px;
     padding: .5em 2em 1.5em 2em;
     display: grid;
@@ -22,7 +22,7 @@ h2, h3, h4, h5 {
     grid-gap: 1em;
     gap: 1em;
 }
-.blog-container {
+section {
     animation-name: bg-box;
     animation-duration: 100s;
     animation-iteration-count: infinite;
@@ -70,42 +70,43 @@ h2, h3, h4, h5 {
  .list-content {
     grid-area: content;
  }
- .header {
+ header {
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
     background-color: white;
 }
-.header-title {
+header h1, header a {
     margin-left: 20px;
-    font-size: 1.5em;
+    font-size: 30px;
+    text-decoration: none;
     animation-name: header;
     animation-duration: 100s;
     animation-iteration-count: infinite;
 }
-.home-title, .blog-title, .subtitle {
+header h1, section h1, section h2, header p {
     text-transform: uppercase;
 }
-.home-title {
-  font-size: 1em;
-}
-.blog-title {
-  font-size: 1.5em;
-}
-.subtitle {
+section h2 {
     font-size: 1.5em;
-    animation-name: page-title;
-    animation-duration: 100s;
-    animation-iteration-count: infinite;
-    margin-top: -.5em;
 }
-.date {
+section div:first-child h2 {
+  margin-top: 1em;
+}
+section h1, section div:first-child h3 {
   font-size: 1em;
   text-transform: uppercase;
   animation-name: page-title;
   animation-duration: 100s;
   animation-iteration-count: infinite;
+}
+section div:first-child h3 {
+  margin-top: -.5em;
+}
+section h3, section h4, section h5 {
+  font-size: 1.25em;
+  text-transform: uppercase;
 }
 .home-link {
     text-decoration: none;
