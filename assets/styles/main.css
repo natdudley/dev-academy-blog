@@ -9,6 +9,10 @@ body {
 a, a:visited, a:hover {
   color: white;
 }
+
+h2, h3, h4, h5 {
+  margin-top: 2em;
+}
 .index-container {
     margin-top: 100px;
     padding: .5em 2em 1.5em 2em;
@@ -80,7 +84,7 @@ a, a:visited, a:hover {
     animation-duration: 100s;
     animation-iteration-count: infinite;
 }
-.home-title, .blog-title {
+.home-title, .blog-title, .subtitle {
     text-transform: uppercase;
 }
 .home-title {
@@ -90,10 +94,11 @@ a, a:visited, a:hover {
   font-size: 1.5em;
 }
 .subtitle {
-    font-size: 1em;
+    font-size: 1.5em;
     animation-name: page-title;
     animation-duration: 100s;
     animation-iteration-count: infinite;
+    margin-top: -.5em;
 }
 .date {
   font-size: 1em;
