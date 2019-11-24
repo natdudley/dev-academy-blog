@@ -64,6 +64,12 @@ section {
 #list-4{
   grid-area: 3/2/4/6; 
 }
+#list-5{
+  grid-area: 3/7/4/11; 
+}
+#list-6{
+  grid-area: 4/1/5/5; 
+}
  .list-title {
     grid-area: title;
  }
