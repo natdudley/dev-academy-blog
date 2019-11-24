@@ -168,3 +168,16 @@ section h3, section h4, section h5 {
       background: hsl(29, 99%, 48%);
     }    
 }
+pre {
+  overflow-x: auto;
+  padding: 10px;    
+  border-radius: 5px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  background: #292929;
+  color: #fafafa;
+    font-size: 16px;
+}
