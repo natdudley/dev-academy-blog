@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nat Dudley's Dev Academy blog</title>
+        <meta charset="UTF-8">
+        <link href="../assets/styles/main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" charset="utf-8" />
+      </head> 
+    <body>
+      <header>
+        <p><a class="home-link" href="../index.html">Nat Dudley</a></p> 
+      </header>
+      <main>
+          <section>
+            <div class="list-title">
+              <h1>Sprint 3 Technical Blog</h1>
+              <h2>Q&A on HTML, CSS, and JS principles</h2>
+              <h3>24 November 2019</h3>
+            </div>
+            <div class="list-content">
+              <h2>What is an analogy for HTML and CSS?</h2>
+              <p>HTML and CSS are like a sheet of music.</p>
+              <p>In music, the bare necessity to give meaning to the player consistent of the staff (the lines on the sheet of music), the clef (which tells us which range of notes we’re looking at), the time signature (which tells us the cadence of the piece), and the notes. The notes tell us, within the bounds defined by the staff, the clef, and the time signature, what to actually play in terms of pitch and length of sound. The elements combined provide the structure of the piece.</p>
+              <p>HTML does the same for our webpage. Our document is the staff, ready and waiting for us to add content. Our doctype is our clef and time signature, telling us how to interpret the notes to come. Our key is the parts of HTML that add invisible but meaningful structure to our page, like section, and article, and header, and our notes are our elements like H1, H2, p, and their content. Our notes are the meaningful content of the page, but the structure of the key and clef tells us how to interpret them</p>
+              <p>We could play music just with these elements, this HTML. It would have meaning. But it wouldn’t make our heart sing in the way music often does.</p>
+              <p>CSS is like the key signature, dynamics, articulation markers, and ornaments of music. In music, the key signature tells us whether we should shift or offset the notes by a semitone. Dynamics are indicators of relative intensity and volume. Dynamics tell the player whether to play a section of notes loudly or softly or increasing or decreasing in volume. Articulation marks tell the player how to perform a single note, like staccato (a shorter note) or fermata (a pause, or longer note), or spicatto (a pause after the note). Ornaments tell a player to do things like add a trill to a note.</p>
+              <p>Like key signatures, dynamics, articulation markers, and ornaments do to notes, CSS sends signals to our browser about how to ‘play’ a certain element. It tells us to make an element more visually prominent by changing its colour or position, or it groups elements together so we notice them as a passage by adding white space around them. CSS brings the music of our web page alive; it gives it heart.</p>
+              <h2>Explain control flows and loops using an example from every day life</h2>
+              <p>Control flows are the order in which our computer executes our code. Loops are parts of our code where the computer repeats the same steps until a condition is satisfied.</p>
+              <p>An everyday example of this for me is what happens after I’ve done my teeth and gotten into bed at night.</p>
+              <p>When I get into bed, my black cat, Odinn, comes and sits on me. My grey cat, Hedy, goes and sits by the bedroom door. She sits by the door until my partner gets into bed (this is a loop, where the condition that ends the loop is my partner coming to bed). When my partner gets into bed, she climbs up too, and sits between us. My partner and I start reading our books until Hedy headbutts our hands and demands pats. This is another loop. My partner and I start patting Hedy and giving her scratches until she decides she doesn’t want more pats and tells us by grabbing our hands with her paws (another loop!). We then go back to reading, until Hedy decides it’s proper bed time and that she wants her bedtime treats. She tell us this by trying to knock my partner’s glasses off the bedside table (yet another loop). If I gave the cats treats last night, my partner gets up. Else, I get up and give the cats treats and put them to bed. Then, I close the door, turn off the light, plug my phone in to charge, and go to sleep.</p>
+              <p>In this example, the control flow is the order in which all of it happens. I can’t feed my cats treats before they have pats (no, really, they get very mad). The loops are all the places where I did one thing until a condition was met (like my cat being stroppy), and then changed behaviour based on that condition.</p>
+              <h2>Describe what the DOM is and an example of how you might interact with it.</h2>
+              <p>The DOM is the document object model. The DOM is built by your browser when it loads your web page, and is a tree model where every element on your page is represented in a hierarchy.</p>
+              <p>The DOM allows web developers to target and interact with different elements on the page. Some examples of this are:</p>
+              <ul>
+                <li>Using developer tools in your browser to find and edit elements. You can do everything from add to remove to change the styling. Generally, this is only temporary, but it’s a great way to test out changes you want to make as you get real-time feedback.</li>
+                <li>Targeting an element with JavaScript. When you’re writing JavaScript, you use the DOM to find the exact element(s) you want to use or edit. For example, you can watch a particular element, and when the user clicks on it, you can use code to apply behaviours like changes in colour or new sections appearing in the page.</li>
+              </ul>
+              <h2>Explain the difference between accessing data from arrays and objects.</h2>
+              <h3>Arrays</h3>
+              <p>Arrays are a special type of variable in JavaScript that allows us to store an ordered list of things. Those things can be any type of variable such as string or number or even an object.</p>
+              <p>In general, order matters in an array, but does not matter in an object.</p>
+              <h4>Accessing arrays</h4>
+              <p>Because order matters in an array, we access an array differently, by using the position of the item in the array. For example, if we had an array called shoppingList, and we wanted to get the first item on the shopping list, we would use shoppingList[0].</p>
+              <p>If we wanted to list out every item in shoppingList, there are a few different approaches. We use these approaches because they respect and follow the order of the items in the array.</p>                
+              <h5>For loop</h5>
+              <p>We could use a for loop, telling the computer to start at position 0, and print out that item, increasing the position as long as it’s less than the total length of our list.</p>
+              <pre><code>for (var i = 0; i < shoppingList.length; i++) {
+                    console.log(shoppingList[i]); // logs items in shoppingList
+                  }</code></pre>
+              <h5>For…of loop</h5>
+              <p>We could also tell the computer that for each item of the array to print out that item.</p>
+              <pre><code>for (var item of shoppingList) {
+                    console.log(item); // logs items in shoppingList
+                  }</code></pre>
+              <h5>forEach method</h5>
+              <p>Finally, we could add a method to our array name that also tells it to print out each item in the array.</p>
+              <pre><code>shoppingList.forEach(item) {
+                    console.log(item); // logs items in shoppingList
+                  });</code></pre>
+              <p>We don’t use the for…in loop for arrays because the for…in loop doesn’t always respect the order of the array.</p>
+              <h3>Objects</h3>
+              <p>Objects are a special type in JavaScript that are used to store a collection of information about a thing. Objects contain a series of keys and the values that belong to each key. An example of this is an apple. The apple object has properties, like a colour (green), a variety (Granny Smith), a taste (sharp, sweet), and a weight (100g). These are called key-value pairs (even when there’s more than one value, because that value is an array).</p>
+              <p>In general, order does not matter in an object.</p>
+              <h4>Accessing objects</h4>
+              <p>Because objects contain a bunch of key-value pairs, we look up the value by using the key, which is a variable. For example, to find out the variety of the object ‘apple’, we’d use apple.variety. This is called dot notation. We could also use apple[‘variety’].</p>
+              <p>Because objects don’t have a fixed order, we can’t just use a standard for loop which increases the order number. Nor can we use a for…of loop. Instead, we use:</p>
+              <h5>For...in loop</h5>
+              <p>For…in loops tell our computer for every variable in our object, to first print out the variable, and then to print out the value belonging to object.variable.</p>
+              <pre><code>for (var key in apple) {
+                    console.log(key); // logs keys in apple
+                    console.log(apple[key]); // logs values in apple
+                  }</code></pre>
+              <h3>The difference</h3>
+              <p>When we access arrays, we use methods that rely on the order of the array, and enable us to loop through the array by increasing/decreasing the order number.</p>
+              <p>When we access objects, we use methods that do not rely on the order of the array, and instead use the key-value pairs.</p>
+              <h2>Explain what functions are and why they are useful.</h2>
+              <p>Functions are small parts of our code called ‘subprograms’. We use them to complete a specific task in our code. </p>
+              <p>We give a function inputs, and then use code to tell them computer what to do with those inputs. It can be simple, like printing them out, or more complicated like using them to look up another item, or performing calculations on them.</p>
+              <p>At the end of the function, we’ll be returned a value based on what we’ve told the function to do with the inputs.</p>
+              <p>Functions are useful because they stop us from having to repeat the same code over and over by writing something that can be invoked and run using different inputs.</p>
+            </div>
+          </section>
+      </main>
+  </body>
+</html>
